@@ -90,16 +90,6 @@ Includes complete flows for:
 
 ---
 
-## 🗺️ Next Steps
-
-This planning repository will serve as the **source of truth** during development. Next milestones:
-- Wireframes and high-fidelity mockups
-- API contracts and OpenAPI documentation
-- Detailed acceptance criteria and user stories
-- Testing strategy and CI/CD setup
-
----
-
 ## ✨ Credits
 
 Planning and documentation prepared for portfolio and potential production deployment.

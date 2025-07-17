@@ -1,101 +1,170 @@
 # 🍳 Recipe Social Media App – Planning Repository
 
-This repository contains all **project planning, documentation, and architecture** for the **Recipe Social Media App**, a social platform to share, discover, and enhance home-cooked recipes with the help of AI.
+This repository contains the **core planning documents**, screen flows, user journey definitions, data models, and wireframe checklists for the Recipe Social Media App—a social-first platform for discovering, sharing, and enhancing recipes using AI.
 
 ---
 
-## 🎯 Overview
+## 📌 Vision Statement
 
-The Recipe Social Media App is designed as a **community-driven recipe platform** with:
-- **Social-first experience** (feeds, following, likes, comments)
-- **AI-powered tools** for recipe enhancements and generation
-- A **rich recipe discovery** interface
-
-This repository includes:
-- Functional and Non-Functional Requirements
-- Screen Flow Diagrams and User Journeys
-- Data Models and Firestore Security Rules
+To create a vibrant and inclusive social platform where home cooks and food enthusiasts can share, discover, and enhance home-cooked recipes—powered by AI-driven personalization and community engagement.
 
 ---
 
-## 📝 Documents
+## 👥 Target User Personas
 
-### 📘 Functional and Non-Functional Requirements
-[FuncionalNonFunctionalReqs.docx](./FuncionalNonFunctionalReqs.docx)
-
-Key highlights:
-- **Authentication:** Google and Apple SSO only
-- **Recipe Creation:** Manual editor and AI-powered modifications
-- **Community Features:** Likes, comments, ratings, follows, notifications
-- **Scalability:** Designed for up to 1,000 initial users
-- **Performance Targets:** <2s feed loading, <10s AI recipe generation
+1. **Home Cooks** – love cooking and sharing creations  
+2. **Health-Conscious Individuals** – interested in nutrition and diet-specific modifications  
+3. **Beginner Cooks** – need easy recipes and supportive tools
 
 ---
 
-### 📱 Screen Flows
-[ScreenFlow.docx](./ScreenFlow.docx)
+## 🌟 Unique Value Proposition
 
-Includes complete flows for:
-- **Onboarding and profile setup**
-- **Bottom Tab Navigation:**
-  - Feed (browsing and discovery)
-  - Cookbook (saved recipes)
-  - + (manual recipe creation)
-  - Chefbot (AI exploration)
-  - Profile
-- **FAB:** A contextual floating button in the Feed for a **Guided AI Recipe Assistant**, with step-by-step MCQs:
-  1. Meal Type
-  2. Dietary Choices
-  3. Regional Cuisine
-  4. Kid Friendly
-  5. Portion Quantity
-  6. Portion Size
-  7. Ingredient Exclusions
-  8. Spice Level
-- Manual creation and AI generation workflows
-- Social interactions and error states
+- **Social-first recipe sharing** with likes, comments, follows, and notifications  
+- **AI-powered assistant** to help users create or enhance recipes through guided inputs  
+- **Privacy-first controls** to keep recipes or cookbooks private  
+- **Powerful discovery** through tags, filters, feeds, and AI personalization
 
 ---
 
-### 🛠️ Data Models & Firestore Design
-[DataModelsAndSecurityRules.docx](./DataModelsAndSecurityRules.docx)
+## 📁 Included Documents
 
-**Data Models Include:**
-- **User Model:** Profiles with preferences and cookbook privacy
-- **Saved Recipes:** Subcollection with notes and tags
-- **Followers & Following:** Subcollections for social connections
-- **Recipe Model:** Full recipe metadata including nutrition, tags, and visibility
-- **Recipe Subcollections:**
-  - Comments and likes
-  - Ratings
-  - Enhancements (AI-powered changes)
-
-**Example Firestore Rules:**
-- Users can edit only their own recipes and profiles
-- Private recipes only visible to their owner
-- Public recipes readable by all authenticated users
-- Secure access to saved recipes respecting privacy flags
+| File | Description |
+|------|-------------|
+| `FuncionalNonFunctionalReqs.docx` | Functional and Non-Functional Requirements |
+| `ProjectVisionTargetUsers.docx`   | Vision, Personas, and Unique Value Proposition |
+| `ScreenFlow.docx`                 | User Flows, Navigation, and Feature Screens |
+| `DataModelsAndSecurityRules.docx`| Firestore Data Models and Security Rules |
+| `ScreenChecklist.md`             | Wireframe screen checklist for development/design tracking |
 
 ---
 
-## 🧩 Technologies & Considerations
+## 🧭 Key App Flows
 
-- **Firebase Firestore:** Real-time data storage
-- **Firebase Authentication:** Google/Apple SSO
-- **AI Integrations:** Recipe enhancements and generation
-- **React Native:** Cross-platform app development
-- **React Native Paper:** UI components (including FAB)
-- **Accessibility:** Planned for later phases
-- **Monetization:** Not included in MVP, but future options identified
-
----
-
-## ✨ Credits
-
-Planning and documentation prepared for portfolio and potential production deployment.
+- **Onboarding & Authentication**  
+- **Tab Bar Navigation** (Feed | Cookbook | + | Chefbot | Profile)  
+- **Manual Recipe Creation** via the Create tab  
+- **AI Recipe Assistant** accessed via FAB on the Feed  
+- **Chefbot** AI exploration and enhancement tab  
+- **Cookbook management**, saving, filtering, toggling privacy  
+- **Community features**: profiles, followers, comments, likes, ratings  
+- **Notifications & moderation**: alerts, reports, blocks  
+- **Error & Empty States**
 
 ---
 
-## 📄 License
+## ✅ Screen Checklist
 
-This project documentation is intended for educational and portfolio purposes. If you wish to use any materials commercially, please contact the author.
+View the full checklist in [`ScreenChecklist.md`](./ScreenChecklist.md)  
+A preview:
+
+- [ ] Welcome Screen  
+- [ ] SSO Login (Google / Apple)  
+- [ ] Profile Setup  
+- [ ] Feed with FAB for AI assistant  
+- [ ] Recipe Card & Detail View  
+- [ ] Manual Creation Screens (+ tab)  
+- [ ] AI Assistant Flow (multi-step MCQ)  
+- [ ] Cookbook screens  
+- [ ] Profile + Edit + Follower lists  
+- [ ] Ratings, Comments, Notifications  
+- [ ] Error and empty UI states
+
+---
+
+## 🔐 Firestore Data Models
+
+See full details in [`DataModelsAndSecurityRules.docx`](./DataModelsAndSecurityRules.docx)
+
+Includes:
+- **User model** with preferences, saved recipes, followers/following
+- **Recipe model** with ingredients, steps, images, tags, nutrition, enhancements
+- **Subcollections** for:
+  - Comments (with replies and likes)
+  - Ratings (per user)
+  - Likes (per user)
+  - Enhancements (AI modifications)
+- **Firestore security rules** for:
+  - Profile data
+  - Recipe visibility and ownership
+  - Saved recipes (respecting privacy)
+
+---
+
+## 🧪 Functional Highlights
+
+- Google/Apple SSO only (no password login)  
+- Real-time feed and interactions  
+- Manual and AI-enhanced recipe creation  
+- Full CRUD with Firestore  
+- Secure access control for public vs private content  
+- MVP excludes messaging and monetization (planned for future)
+
+---
+
+## 🧱 Non-Functional Requirements (NFRs)
+
+- Feed loads within **2 seconds**  
+- AI responses within **10 seconds**  
+- Supports **1,000 users initially**  
+- 99% uptime expected  
+- Minimum OS support: iOS 13+, Android 8+  
+- Accessibility and monetization planned for later phases  
+
+---
+
+## 🛠 Tools and Technologies (Planned)
+
+- React Native + Expo (frontend)  
+- React Native Paper (UI components)  
+- Firebase Firestore (database)  
+- Firebase Auth (Google/Apple SSO)  
+- OpenAI API for recipe generation & enhancement  
+- GitHub Projects for tracking and collaboration
+
+---
+
+## 🗂 Milestones & Project Tracking
+
+Project board is divided into 4 key planning milestones:
+
+1. **Initial Planning Complete**
+2. **Data Modeling & Security Design**
+3. **Screen Flow & UX Design Complete**
+4. **Final Review & Integration Prep**
+
+Each milestone contains numbered issues with checklists and acceptance criteria.
+
+---
+
+## 📝 License
+
+This project is created for educational and portfolio purposes only.
+
+All documentation and materials are owned by the project author and may not be reused for commercial purposes without explicit permission. If you wish to reference, fork, or contribute, please contact the repository maintainer.
+
+---
+
+## 🤝 Contributing
+
+At this stage, contributions are limited to planning and design collaboration. If you're interested in offering feedback or pairing on early development architecture, feel free to open an issue or submit a suggestion via the [GitHub Issues tab](../../issues).
+
+---
+
+## 🔗 Related Links
+
+- [Project Board – Milestones & Issues](../../projects)  
+- [Functional Requirements](./FuncionalNonFunctionalReqs.docx)  
+- [Screen Flow](./ScreenFlow.docx)  
+- [Data Models & Firestore Rules](./DataModelsAndSecurityRules.docx)  
+- [Vision & Personas](./ProjectVisionTargetUsers.docx)  
+- [Wireframe Screen Checklist](./ScreenChecklist.md)
+
+---
+
+## ✨ Author
+
+**Riccardo Moncada**  
+GitHub: [@rmondev](https://github.com/rmondev)  
+LinkedIn: [linkedin.com/in/riccardomoncada](https://www.linkedin.com/in/rmondev)  
+
